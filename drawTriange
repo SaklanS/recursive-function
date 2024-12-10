@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+void drawTriangle(int n, int current) {
+    if (current > n) return;
+    for (int i = 0; i < current; i++) printf("*");
+    printf("\n");
+    drawTriangle(n, current + 1);
+}
+
+int main() {
+    int a = 10, b = 1;
+    drawTriangle(a, b); // এখানে শুধুমাত্র ফাংশন কল করা হয়েছে
+    return 0;
+}
