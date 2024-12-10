@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+void drawHistogram(int *bars, int count) {
+    int max = 0;
+    for (int i = 0; i < count; i++) if (bars[i] > max) max = bars[i];
+    for (int i = max; i > 0; i--) {
+        for (int j = 0; j < count; j++) {
+            if (bars[j] >= i) printf("* ");
+            else printf("  ");
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int a[] = {5, 3, 7, 1, 4};  
+    int b = 5; 
+    drawHistogram(a, b);
+    return 0;
+}
